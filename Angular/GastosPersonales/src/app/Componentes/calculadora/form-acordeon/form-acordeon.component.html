@@ -1,0 +1,366 @@
+<div class="container py-5 acordeon mt-8 mb-10">
+
+    <form (ngSubmit)="enviarFormulario()">
+        <div class="form-group">
+            <fieldset>
+                <h4 class="font-weight-semi-bold">Tus Ingresos Mensuales Después De Impuestos</h4>
+                <div class="form-group">
+                    <label for="salario-familiar" class="col-sm-3 col-form-label">Salario familiar</label>
+
+                    <input type="number" class="form-control" id="1" [(ngModel)]="salarioFamiliar"
+                        name="salario-familiar" min="0">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="otras-fuentes-ingresos">Otras fuentes de ingresos</label>
+                    <input type="number" class="form-control" id="2" name="otras-fuentes-ingresos"
+                        [(ngModel)]="otrasFuentesIngresos" min="0">
+                </div>
+            </fieldset>
+        </div>
+
+        <br>
+        <br>
+        <div class="form-group">
+            <fieldset>
+                <h4 class="font-weight-semi-bold">Gastos</h4>
+                <!-- Acordeón -->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+
+                        <!--Gastos del hogar-->
+                        <h2 class="accordion-header">
+                            <button class="accordion-button tituloCategoria" type="button"
+                                [ngClass]="{'active': showPanelOne}" (click)="togglePanelOne()">Gastos del
+                                Hogar
+                                <i class="fas fa-plus-circle"></i> <!-- Icono redondo verde con un + dentro -->
+
+                            </button>
+
+                        </h2>
+
+                        <div class="accordion-collapse" *ngIf="showPanelOne">
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="hipoteca-alquiler">Hipoteca o alquiler</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="3" name="hipoteca-alquiler"
+                                            [(ngModel)]="hipotecaAlquiler" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="seguro-hogar">Seguro hogar</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="4" name="seguro-hogar"
+                                            [(ngModel)]="seguroHogar" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="agua-gas-electricidad">Agua, gas y electricidad</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="5" name="agua-gas-electricidad"
+                                            [(ngModel)]="aguaGasElectricidad" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="internet-television">Internet y Televisión</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="6" name="internet-television"
+                                            [(ngModel)]="internetTelevision" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="7" [(ngModel)]="telefono"
+                                            name="telefono" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end gastos del hogar-->
+
+
+                    <!--Gastos transporte-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button tituloCategoria" type="button"
+                                [ngClass]="{'active': showPanelTwo}" (click)="togglePanelTwo()">Transporte
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </h2>
+
+                        <div class="accordion-collapse" *ngIf="showPanelTwo">
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="coche-moto">Coche, moto</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="8" name="coche-moto"
+                                            [(ngModel)]="cocheMoto" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="seguro-coche">Seguro coche, moto</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="9" name="seguro-coche"
+                                            [(ngModel)]="seguroCocheMoto" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="mant-coche">Mantenimiento del coche</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="10" name="mant-coche"
+                                            [(ngModel)]="mantenimientoCoche" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="gasolina">Gasolina</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="11" [(ngModel)]="gasolina"
+                                            name="gasolina" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="transporte">Transporte público</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="12" name="transporte"
+                                            [(ngModel)]="transportePublico" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end gastos transporte-->
+
+                    <!--Gastos educacion-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button tituloCategoria" type="button"
+                                [ngClass]="{'active': showPanelThree}" (click)="togglePanelThree()">Educación
+                                <i class="fas fa-plus-circle"></i></button>
+                        </h2>
+
+                        <div class="accordion-collapse" *ngIf="showPanelThree">
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="matricula">Matrícula escolar</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="13" name="matricula"
+                                            [(ngModel)]="matriculaEscolar" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="material">Material escolar</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="14" name="material"
+                                            [(ngModel)]="materialEscolar" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="gastos-extras">Gastos extra escolares</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="15" name="gastos-extras"
+                                            [(ngModel)]="gastosExtraEscolares" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end gastos educacion-->
+
+                    <!--Gastos personales-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button tituloCategoria" type="button"
+                                [ngClass]="{'active': showPanelFour}" (click)="togglePanelFour()">Gastos
+                                personales
+                                <i class="fas fa-plus-circle"></i></button>
+                        </h2>
+
+                        <div class="accordion-collapse" *ngIf="showPanelFour">
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="alimentacion">Alimentación</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="16" name="alimentacion"
+                                            [(ngModel)]="alimentacion" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="ropa">Ropa</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="17" [(ngModel)]="ropa" name="ropa"
+                                            min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="vacaciones">Vacaciones</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="18" [(ngModel)]="vacaciones"
+                                            name="vacaciones" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="gastos-medicos">Gastos médicos</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="19" name="gastos-medicos"
+                                            [(ngModel)]="gastosMedicos" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="mascota">Mascota</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="20" [(ngModel)]="mascota"
+                                            name="mascota" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row filaAcordeon">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="otros">Otros gastos</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="21" [(ngModel)]="otrosGastos"
+                                            name="otros" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end gastos personales-->
+
+
+
+
+
+
+
+
+                </div>
+            </fieldset>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary boton">Enviar</button>
+    </form>
+</div>

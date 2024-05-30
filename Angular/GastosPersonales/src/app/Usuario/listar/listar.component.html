@@ -1,0 +1,109 @@
+<div class="container p-3 mb-8 border-radius">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="mt-4 font-weight-semi-bold">Movimientos</h4>
+            <label for="año" class="me-2">Filtrar:</label>
+            <div class="d-flex justify-content-center mb-3">
+                <div class="form-group me-20">
+                    <label for="mes">Mes</label>
+
+                    <select class="form-control" id="mes" #mesSelector
+                        (change)="obtenerMovimientos(+mesSelector.value , +anioSelector.value)">
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                        <!-- Agregar el resto de los meses -->
+                    </select>
+
+                </div>
+                <div class="form-group mr-10">
+                    <label for="año">Año</label>
+                    <select class="form-control" id="anio" #anioSelector
+                        (change)="obtenerMovimientos(+mesSelector.value, +anioSelector.value)">
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <!-- Agregar años anteriores o posteriores si es necesario -->
+                    </select>
+                </div>
+            </div>
+            <div class="card-body mb-5">
+                <div class="table-responsive mb-5">
+                    <table class="table table-hover mb-5">
+                        <thead>
+                            <tr class="text-center">
+                                <th>DESCRIPCIÓN</th>
+                                <th>IMPORTE</th>
+                                <th>FECHA</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let movimiento of movimientos">
+                                <tr class="text-center">
+                                    <td>{{ movimiento.categoria?.nombreCategoria}}</td>
+                                    <td>
+                                        <input *ngIf="movimiento.editando" type="number" class="form-control"
+                                            [(ngModel)]="movimiento.cantidad" />
+                                        <span *ngIf="!movimiento.editando">{{ movimiento.cantidad }}€</span>
+                                    </td>
+                                    <td>
+                                        <input *ngIf="movimiento.editando" type="date" [(ngModel)]="movimiento.fecha"
+                                            class="form-control" [max]="obtenerFechaActual()"
+                                            [disabled]="!validarFecha(movimiento)" />
+                                        <span *ngIf="!movimiento.editando">{{ movimiento.fecha | date:'dd/MM/yyyy'
+                                            }}</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            <button *ngIf="!movimiento.editando; else guardarBtn"
+                                                class="btn btn-warning boton"
+                                                (click)="editarMovimiento(movimiento)">Editar</button>
+                                            <ng-template #guardarBtn>
+                                                <button class="btn btn-success boton"
+                                                    (click)="guardarMovimiento(movimiento)">Guardar</button>
+                                            </ng-template>
+                                            <button class="btn btn-danger boton" style="margin-left: 10px;"
+                                                *ngIf="movimiento.idMovimiento !== undefined"
+                                                (click)="movimiento.editando ? cancelarEdicion(movimiento) : eliminarMovimiento(movimiento.idMovimiento)">
+                                                {{ movimiento.editando ? 'Cancelar' : 'Eliminar' }}
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </ng-container>
+                            <tr>
+                                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                <td class="text-center">{{ calcularTotal() }}€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="container bg-light text-center pt-5 mb-5 chart-container spacing-top">
+                        <div class="row">
+                            <div class="col-md-8 mb-5">
+                                <app-pie-chart [movimientos]="movimientos"></app-pie-chart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="header"></div>
+<div class="contenido">
+    <form action="#" method="POST" class="form" (ngSubmit)="registerUser()">
+        <h2 class="form_title">Regístrate</h2>
+
+        <div class="form_container">
+            <div class="form_group">
+                <input type="text" name="name" id="user" class="form_input" placeholder=" " autocomplete="name" required
+                    [(ngModel)]="usuario.nombre">
+                <label for="name" class="form_label">Nombre:</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <input type="email" name="email" id="userEmail" class="form_input" placeholder=" " autocomplete="email"
+                    required [(ngModel)]="usuario.email">
+                <label for="email" class="form_label">Correo electrónico:</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <input type="password" id="password" class="form_input" placeholder=" " name="password"
+                    autocomplete="current-password" required [(ngModel)]="usuario.password">
+                <label for="password" class="form_label">Contraseña:</label>
+                <span class="form_line"></span>
+            </div>
+
+            <input type="submit" class="form_submit" value="Regístrate">
+            <p class="form_paragraph">¿Ya tienes una cuenta? <a [routerLink]="['/login']" class="form_link">Inicia
+                    sesión</a></p>
+        </div>
+
+    </form>
+</div>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,140 @@
+.container {
+  background-color: rgba(82, 172, 167, 0.5);
+  width: 60%;
+}
+
+.boton {
+  background-color: #52aca7;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background-color: rgba(82, 172, 167, 0.7);
+}
+
+.card-body,
+.card-header {
+  overflow-x: auto;
+}
+
+@media (max-width: 767px) {
+  .table td,
+  .table th {
+    display: block;
+    width: 100%;
+  }
+
+  .table th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table td:last-child {
+    position: relative;
+  }
+
+  .table td:last-child .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 598px) {
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor */
+  }
+
+  .table td,
+  .table th {
+    display: block;
+    width: 100%;
+  }
+
+  .table th {
+    position: static; /* Cambiar a posición estática para que se muestren los encabezados */
+    top: auto;
+    left: auto;
+  }
+
+  .table td:last-child {
+    position: relative;
+  }
+
+  .table td:last-child .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 360px) {
+  .container {
+    width: 100%; /* Hacer que el contenedor ocupe todo el ancho disponible */
+  }
+}
+
+.char {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 80%; /* Puedes ajustar el porcentaje según sea necesario */
+  margin: 30px auto; /* Añadir margen superior e inferior */
+  padding-top: 30px; /* Añadir padding superior para aumentar espacio */
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    flex-direction: column; /* Hacer que el gráfico se apile verticalmente en dispositivos más pequeños */
+    align-items: center;
+    padding: 5px; /* Ajustar el padding para pantallas más pequeñas */
+  }
+
+  .chart-container .col-md-8 {
+    width: 100%; /* Asegurar que el gráfico ocupe todo el ancho disponible en pantallas pequeñas */
+  }
+
+  app-pie-chart {
+    width: 100%;
+    max-width: 300px; /* Ajustar el tamaño máximo del gráfico para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  app-pie-chart {
+    max-width: 200px; /* Reducir el tamaño máximo del gráfico aún más para pantallas muy pequeñas */
+  }
+}
+
+/* Clase adicional para separación */
+.spacing-top {
+  margin-top: 30px; /* Ajusta según sea necesario */
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+h4,
+.font-weight-semi-bold {
+  font-weight: 600 !important;
+}

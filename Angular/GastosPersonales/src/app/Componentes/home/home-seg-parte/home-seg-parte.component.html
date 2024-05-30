@@ -1,0 +1,58 @@
+<div class="container-fluid py-5">
+    <div class="container py-5 segundaParte">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <h1 class="section-title position-relative text-center mb-5">¡Controla Tus Finanzas y Ahorra Como Un
+                    Experto Con Nuestra Calculadora De Gastos!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 py-5">
+                <h4 class="font-weight-bold mb-3">Descubre Una Nueva Forma de Gestionar Tus Finanzas</h4>
+                <h5 class="text-muted mb-3">¡Bienvenido a nuestra plataforma de gestión de gastos
+                    personales! ¿Alguna vez has soñado con tener el control total de tu dinero sin sentirte abrumado por
+                    complicadas cuentas?
+                </h5>
+                <div id="second-paragraph" style="display: block">¡Pues estás en el lugar perfecto!
+                    Con nuestra
+                    calculadora de gastos, ahorrar dinero será pan comido. Imagina poder ver claramente en qué se va tu
+                    dinero, identificar áreas donde puedes ajustar gastos y ver cómo esos pequeños cambios suman rápido.
+                    Con solo unos clics, podrás categorizar tus gastos y entender mejor tus hábitos financieros.
+
+                    ¿Te das demasiados lujos con entretenimiento? ¿O tal vez podrías recortar un poco en comidas fuera
+                    de casa? Nuestra herramienta te dará insights valiosos para que tomes decisiones inteligentes sobre
+                    tu dinero.</div>
+
+
+                <div class="btn btn-secondary mt-2">
+                    <a (click)="mostrarParrafo()"> {{ mostrarTextoCompleto ? 'Ocultar texto' : 'Leer más' }}</a>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-4" style="min-height: 400px;">
+                <div class="position-relative h-100 rounded overflow-hidden">
+                    <img class="position-absolute" src="../../../../assets/cochinito.jpeg"
+                        style="object-fit: cover; width: 100%; max-width: 100%;">
+                </div>
+
+            </div>
+            <div class="col-lg-4 py-5">
+                <h4 class="font-weight-bold mb-3">Comienza a Ahorrar Sin Complicaciones</h4>
+                <h5 class="text-muted mb-3">Pero lo más genial de todo es lo fácil que resulta comenzar. No tienes que
+                    ser un experto en finanzas ni pasar horas tratando de entender hojas de cálculo complicadas.</h5>
+                <div id="second-paragraph2" style="display: block">Con nuestra interfaz súper fácil de usar, ¡podrás
+                    empezar a ahorrar desde el primer día sin complicaciones! Entonces, ¿por qué esperar más? Únete a
+                    nuestra comunidad de ahorradores y toma el control de tus finanzas hoy mismo. ¡El camino hacia una
+                    vida financiera más saludable empieza aquí mismo!</div>
+
+
+                <div class="btn btn-secondary mt-2" id="estiloSegundoBoton">
+                    <a (click)="mostrarParrafo2()"> {{ mostrarTextoCompleto2 ? 'Ocultar texto' :
+                        'Leer más' }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

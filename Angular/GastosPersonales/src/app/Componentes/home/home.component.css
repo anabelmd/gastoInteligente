@@ -1,0 +1,217 @@
+.header {
+  height: 120px;
+}
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  background-color: #f3cec5;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-expand-sm > .container,
+  .navbar-expand-sm > .container-fluid,
+  .navbar-expand-sm > .container-sm,
+  .navbar-expand-sm > .container-md,
+  .navbar-expand-sm > .container-lg,
+  .navbar-expand-sm > .container-xl {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.navbar-expand-sm > .container,
+.navbar-expand-sm > .container-fluid,
+.navbar-expand-sm > .container-sm,
+.navbar-expand-sm > .container-md,
+.navbar-expand-sm > .container-lg,
+.navbar-expand-sm > .container-xl {
+  flex-wrap: nowrap;
+}
+.navbar-expand-sm .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+.navbar-expand-sm .navbar-toggler {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid,
+  .navbar-expand-md > .container-sm,
+  .navbar-expand-md > .container-md,
+  .navbar-expand-md > .container-lg,
+  .navbar-expand-md > .container-xl {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.pt-5,
+.py-5 {
+  padding-top: 1rem !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.pb-5,
+.py-5 {
+  padding-bottom: 1rem !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.bg-light {
+  background-color: #fef1ef !important;
+}
+
+.pt-1,
+.py-1 {
+  padding-top: 0.25rem !important;
+}
+
+.pr-2,
+.px-2 {
+  padding-right: 0.5rem !important;
+}
+
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.pl-4,
+.px-4 {
+  padding-left: 0.5rem !important;
+}
+
+.border-primary {
+  border-color: #f9a392 !important;
+}
+
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+}
+
+.primeraImagen {
+  padding-top: 10px;
+}
+
+.introduccion {
+  text-align: justify;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.background-image {
+  background-image: url("../../../assets/fondo39.png"); /* Ruta de la imagen */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el div */
+  background-position: center;
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 400px; /* Altura del div */
+  width: 100%; /* Ancho del div */
+  color: black; /* Color del texto (ajústalo según tu diseño) */
+  padding: 50px; /* Espaciado interno (opcional) */
+  border-radius: 10px;
+  opacity: 100%;
+
+  font-size: 20px;
+  text-align: left;
+
+  /* Media queries para dispositivos pequeños */
+  @media (max-width: 767px) {
+    height: auto; /* Altura automática para adaptarse al contenido */
+    padding: 20px; /* Reducir el espaciado interno */
+    font-size: 16px; /* Reducir el tamaño del texto */
+  }
+}
+
+.text-container {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-weight: 500;
+}

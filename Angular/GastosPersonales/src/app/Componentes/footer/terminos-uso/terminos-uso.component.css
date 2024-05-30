@@ -1,0 +1,26 @@
+.contenido {
+  min-height: calc(100vh - 115px); /* Resta la altura del header */
+  margin-top: 130px; /* Agrega un margen superior igual a la altura del header */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h2 {
+  color: #52aca7;
+  font-size: 25px;
+}
+h3 {
+  color: #52aca7;
+  font-size: 22px;
+}

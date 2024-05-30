@@ -1,0 +1,183 @@
+p {
+  font-size: 24px; /* Ajusta el tamaño de fuente según sea necesario */
+  font-weight: 800; /* Ajusta el peso de la fuente según sea necesario */
+  color: #52aca7;
+  margin-right: -235px;
+}
+
+.web-name {
+  margin-right: -235px;
+  flex-grow: 1; /* Permite que el nombre de la web ocupe el espacio disponible */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto que se desborda */
+}
+
+.logo-container img {
+  height: 105px; /* Altura deseada */
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-message {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #52aca7;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.logout-container:hover .welcome-message {
+  display: block;
+}
+
+.login-button {
+  margin-right: 50px; /* Ajusta el margen izquierdo del botón de login según sea necesario */
+  font-family: Arial, sans-serif;
+}
+
+a {
+  font-size: 16px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(239, 240, 241);
+  height: 125px;
+}
+.navbar-brand {
+  font-weight: 800;
+  color: #52aca7;
+  font-size: 24px;
+  transition: 0.3s color;
+}
+
+.login-button {
+  background-color: #52aca7;
+  border-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+  font-weight: 550;
+}
+
+.login-button:hover {
+  background-color: #8cceca;
+}
+
+.navbar-togger {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.navbar-togger:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 550;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: black;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #52aca7;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.nav-link.active {
+  background-color: #52aca7; /* Color de fondo del botón de login */
+  color: white; /* Color del texto */
+  padding: 12px 26px; /* Ajusta el espaciado interno */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #52aca7; /* Color de fondo del botón de login */
+  color: white; /* Color del texto */
+  padding: 12px 26px; /* Ajusta el espaciado interno */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.web-name-small {
+  display: none; /* Oculta el texto en pantallas grandes */
+}
+
+@media (min-width: 992px) and (max-width: 1403px) {
+  .web-name {
+    margin-right: -120px; /* Ajusta el margen derecho para dejar espacio para el menú */
+  }
+}
+
+@media (max-width: 991px) {
+  .logo-container,
+  .web-name {
+    display: none; /* Oculta el logo y el nombre de la web en pantallas pequeñas */
+  }
+
+  .web-name-small {
+    display: block; /* Muestra el texto en pantallas pequeñas */
+    font-size: 24px; /* Ajusta el tamaño de fuente según sea necesario */
+    font-weight: 800; /* Ajusta el peso de la fuente según sea necesario */
+    color: #52aca7; /* Color del logo */
+    text-align: center; /* Ajusta la alineación del texto según sea necesario */
+    padding-top: 10px; /* Ajusta el espaciado superior según sea necesario */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1403px) {
+  p {
+    margin-right: -120px; /* Ajuste del margen derecho para dejar espacio para el menú */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (min-width: 992px) and (max-width: 1403px) {
+  p {
+    display: none; /* Oculta el párrafo en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    display: none; /* Oculta el párrafo en pantallas pequeñas */
+  }
+}

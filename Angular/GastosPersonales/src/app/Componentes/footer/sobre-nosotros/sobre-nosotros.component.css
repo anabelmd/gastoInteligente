@@ -1,0 +1,171 @@
+.header {
+  height: 105px;
+}
+
+.container {
+  margin-top: 0px;
+  display: flex;
+  min-height: calc(100vh - 314px);
+  /* Agrega un margen superior igual a la altura del header */
+}
+
+* {
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
+
+.about-us {
+  width: 100%;
+}
+
+.about-us h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #52aca7;
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  margin-top: 40px;
+}
+
+.about-us h1::after {
+  content: "";
+  height: 5px;
+  width: 300px;
+  background-color: #52aca7;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.wrapper {
+  padding: 0px 60px;
+  margin: 20px auto;
+}
+
+.content {
+  width: 60%;
+  float: left;
+  text-align: left;
+  padding: 0px 30px;
+}
+
+.content h3 {
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.content p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #3d3d3d;
+  margin-top: 20px;
+}
+
+.content .button {
+  margin-top: 40px;
+}
+
+.content .button a {
+  color: #fff;
+  background-color: #52aca7;
+  border: 1px solid #52aca7;
+  padding: 10px 35px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.content .button a:hover {
+  background-color: #fff;
+  color: #52aca7;
+}
+
+.image-section {
+  width: 40%;
+  float: right;
+  padding: 0px 30px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 5%;
+}
+
+@media (max-width: 767px) {
+  .content .button a {
+    padding: 10px 20px; /* Ajustar el padding del botón para dispositivos móviles */
+    font-size: 18px; /* Reducir el tamaño de la fuente para dispositivos móviles */
+  }
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor */
+  }
+
+  .content {
+    width: 100%; /* Ajustar el ancho del contenido */
+    padding: 0 15px; /* Añadir un poco de espacio horizontal */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+  }
+
+  .image-section {
+    width: 100%; /* Ajustar el ancho de la sección de imagen */
+    margin-top: 20px; /* Agregar un espacio superior */
+  }
+
+  .content .button {
+    margin-top: 20px; /* Ajustar el espacio superior del botón */
+    text-align: center; /* Centrar el botón */
+  }
+
+  .content .button a {
+    padding: 8px 20px; /* Ajustar el padding del botón */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-us {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .about-us h1 {
+    font-size: 32px;
+  }
+
+  .content {
+    width: 100%;
+    float: none;
+  }
+
+  .content .button {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .content .button a {
+    padding: 8px 25px;
+  }
+
+  .image-section {
+    float: none;
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+
+.content .button a {
+  display: inline-block; /* Convertir el enlace en un elemento de bloque */
+  padding: 10px 20px; /* Ajustar el padding del botón */
+  font-size: 18px; /* Tamaño de fuente */
+  background-color: #52aca7; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado del enlace */
+}
+
+/* Estilos al pasar el mouse */
+.content .button a:hover {
+  background-color: #3d8a86; /* Cambiar color de fondo al pasar el mouse */
+}

@@ -1,0 +1,118 @@
+.header {
+  height: 108px;
+}
+
+.contenido {
+  margin-top: 0px;
+  display: flex;
+  min-height: calc(100vh - 314px);
+
+  /* Agrega un margen superior igual a la altura del header */
+}
+
+.form {
+  background-color: #fff;
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgb(0 0 0) / 30%;
+  text-align: center;
+}
+
+.form_title {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.form_paragraph {
+  font-weight: 300;
+}
+
+.form_link {
+  font-weight: 400;
+  color: black;
+}
+
+.form_container {
+  margin-top: 3em;
+  display: grid;
+  gap: 3em;
+}
+
+.form_group {
+  position: relative;
+  --color: #5757575e;
+}
+
+.form_input {
+  width: 100%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: 0.6em 0.3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color);
+  font-family: Arial, sans-serif;
+}
+
+.form_input:not(:placeholder-shown) {
+  color: #4d4646;
+}
+
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: #52aca7;
+}
+
+.form_label {
+  color: var(--color);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform 0.5s, color 0.3s;
+}
+
+.form_submit {
+  background-color: #52aca7;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0.8em 0;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.form_submit:hover {
+  background-color: #8cceca;
+}
+
+.form_line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #52aca7;
+  transform: scale(0);
+  transform: left bottom;
+  transition: transform 0.4s;
+}
+
+.form_input:focus ~ .form_line,
+.form_input:not(:placeholder-shown) ~ .form_line {
+  transform: scale(1);
+}
+
+@media (max-width: 425px) {
+  .form_title {
+    font-size: 1.8rem;
+  }
+}

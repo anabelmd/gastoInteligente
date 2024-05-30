@@ -1,0 +1,117 @@
+<div class="containerDiv container">
+    <div class=" row fila">
+        <div class="col-12">
+            <div class="tabs">
+                <h5 class="tab col-6" [class.active]="activeTab === 'tab1'" (click)="setActiveTab('tab1')">
+                    POR FECHA
+                </h5>
+                <h5 class="tab col-6" [class.active]="activeTab === 'tab2'" (click)="setActiveTab('tab2')">
+                    POR AHORRO
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <!-- Pestaña 1 -->
+        <div *ngIf="activeTab === 'tab1'">
+            <form #form1="ngForm" (ngSubmit)="calcularAhorroMensual()">
+                <div class="form-group pb-3">
+                    <legend class="pt-3 pl-5 pr-5 pb-3">
+                        Ingresa la cantidad total que deseas ahorrar y la fecha en la que deseas alcanzar tu
+                        objetivo.
+                    </legend>
+                    <div class="fondo">
+                        <div class="row pt-5">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="objetivo">Objetivo</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="number" class="form-control" id="objetivo" name="objetivo"
+                                    [(ngModel)]="objetivo" required min="0">
+
+                                <div *ngIf="form1.controls['objetivo']?.invalid && (form1.controls['objetivo']?.dirty || form1.controls['objetivo']?.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="form1.controls['objetivo']?.errors?.['required']">El objetivo es
+                                        requerido.</div>
+                                    <div *ngIf="form1.controls['objetivo']?.errors?.['min']">El objetivo no puede
+                                        ser negativo.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="fecha">Fecha</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha"
+                                    required>
+                                <div *ngIf="form1.controls['fecha']?.invalid && (form1.controls['fecha']?.dirty || form1.controls['fecha']?.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="form1.controls['fecha']?.errors?.['required']">La fecha es
+                                        requerida.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary boton" [disabled]="form1.invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <!-- Pestaña 2 -->
+        <div *ngIf="activeTab === 'tab2'">
+            <form #form2="ngForm" (ngSubmit)="calcularMesesParaObjetivo()">
+                <div class="form-group pb-3">
+                    <legend class="pt-3 pl-5 pr-5 pb-3">
+                        Ingresa la cantidad total que deseas ahorrar y la cantidad que puedes permitirte ahorrar
+                        mensualmente.
+                    </legend>
+                    <div class="fondo">
+                        <div class="row pt-5">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="objetivo2">Objetivo</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="number" class="form-control" id="objetivo2" name="objetivo2"
+                                    [(ngModel)]="objetivo2" required min="0">
+                                <div *ngIf="form2.controls['objetivo2']?.invalid && (form2.controls['objetivo2']?.dirty || form2.controls['objetivo2']?.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="form2.controls['objetivo2']?.errors?.['required']">El objetivo es
+                                        requerido.</div>
+                                    <div *ngIf="form2.controls['objetivo2']?.errors?.['min']">El objetivo no puede
+                                        ser negativo.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="ahorro">Ahorro mensual</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="number" class="form-control" id="ahorro" name="ahorro" [(ngModel)]="ahorro"
+                                    required min="0">
+                                <div *ngIf="form2.controls['ahorro']?.invalid && (form2.controls['ahorro']?.dirty || form2.controls['ahorro']?.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="form2.controls['ahorro']?.errors?.['required']">El ahorro mensual es
+                                        requerido.</div>
+                                    <div *ngIf="form2.controls['ahorro']?.errors?.['min']">El ahorro mensual no
+                                        puede ser negativo.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary boton" [disabled]="form2.invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

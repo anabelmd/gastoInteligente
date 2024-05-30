@@ -1,0 +1,296 @@
+.header {
+  height: 120px;
+}
+
+.contenedorIzq {
+  background-color: #2b8b87;
+  color: white;
+}
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  background-color: rgba(82, 172, 167, 0.5);
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-expand-sm > .container,
+  .navbar-expand-sm > .container-fluid,
+  .navbar-expand-sm > .container-sm,
+  .navbar-expand-sm > .container-md,
+  .navbar-expand-sm > .container-lg,
+  .navbar-expand-sm > .container-xl {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.navbar-expand-sm > .container,
+.navbar-expand-sm > .container-fluid,
+.navbar-expand-sm > .container-sm,
+.navbar-expand-sm > .container-md,
+.navbar-expand-sm > .container-lg,
+.navbar-expand-sm > .container-xl {
+  flex-wrap: nowrap;
+}
+.navbar-expand-sm .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+}
+.navbar-expand-sm .navbar-toggler {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid,
+  .navbar-expand-md > .container-sm,
+  .navbar-expand-md > .container-md,
+  .navbar-expand-md > .container-lg,
+  .navbar-expand-md > .container-xl {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.pt-5,
+.py-5 {
+  padding-top: 1rem !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.pb-5,
+.py-5 {
+  padding-bottom: 1rem !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.bg-light {
+  background-color: #fef1ef !important;
+}
+
+.pt-1,
+.py-1 {
+  padding-top: 0.25rem !important;
+}
+
+.pr-2,
+.px-2 {
+  padding-right: 0.5rem !important;
+}
+
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.pl-4,
+.px-4 {
+  padding-left: 0.5rem !important;
+}
+
+.border-primary {
+  border-color: #f9a392 !important;
+}
+
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+}
+
+.primeraImagen {
+  padding-top: 10px;
+}
+
+.introduccion {
+  text-align: justify;
+}
+
+.acordeon {
+  width: 35%;
+  border-radius: 10px;
+}
+
+.filaAcordeon {
+  margin-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+}
+
+.tituloCategoria {
+  padding-left: 10px;
+}
+
+.form-control {
+  height: 30px;
+}
+
+.accordion-button {
+  border: 1px solid rgb(212, 208, 208);
+  padding-bottom: 10px;
+
+  box-shadow: none; /* Quita el sombreado al enfocar */
+  background-color: transparent !important; /* Hace transparente el fondo */
+  color: inherit; /* Mantiene el color de texto original */
+}
+
+.accordion-button.active {
+  border-bottom: none; /* Quita el borde inferior */
+}
+
+label {
+  margin-left: 7px;
+}
+
+.accordion-collapse {
+  padding-bottom: 10px;
+}
+.ingresos {
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.boton {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px 10px 20px;
+}
+
+.boton:hover {
+  background-color: rgb(240, 235, 235);
+  cursor: pointer;
+}
+
+.tituloCategoria {
+  position: relative; /* Establece la posición relativa para el botón */
+}
+
+.tituloCategoria .fa-plus-circle {
+  position: absolute; /* Establece la posición absoluta para el icono */
+  top: 50%; /* Alinea el icono verticalmente al centro */
+  right: 20px; /* Ajusta la posición del icono desde el borde derecho */
+  transform: translateY(-50%); /* Centra verticalmente el icono */
+  color: #52aca7; /* Cambia el color del icono a verde */
+  z-index: 2; /* Trae el icono al frente */
+  font-size: 30px; /* Ajusta el tamaño del icono */
+  background-color: white; /* Establece el color de fondo del icono */
+  border: none;
+}
+
+.tituloCategoria .arrow {
+  z-index: 1; /* Asegura que la flecha por defecto esté detrás del icono */
+}
+
+@media (max-width: 598px) {
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor */
+  }
+
+  .col-lg-8,
+  .col-lg-4 {
+    flex: 0 0 100%; /* Hacer que las columnas ocupen todo el ancho disponible */
+    max-width: 100%;
+  }
+
+  .filaAcordeon {
+    flex-direction: column; /* Alinear los elementos de cada fila verticalmente */
+  }
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+h4,
+.font-weight-semi-bold {
+  font-weight: 600 !important;
+}

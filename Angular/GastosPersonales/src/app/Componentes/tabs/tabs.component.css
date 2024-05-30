@@ -1,0 +1,458 @@
+.tabs {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.tab {
+  padding: 10px 0;
+  cursor: pointer;
+  margin-bottom: -10px;
+  width: 50%;
+  text-align: center;
+}
+
+.tab.active {
+  background-color: #52aca7;
+  color: white;
+}
+
+.header {
+  height: 121px;
+}
+
+p {
+  font-size: 24px; /* Ajusta el tamaño de fuente según sea necesario */
+  font-weight: 800; /* Ajusta el peso de la fuente según sea necesario */
+  color: #52aca7;
+  margin-right: -235px;
+}
+
+.web-name {
+  margin-right: -235px;
+  flex-grow: 1; /* Permite que el nombre de la web ocupe el espacio disponible */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto que se desborda */
+}
+
+.logo-container img {
+  height: 105px; /* Altura deseada */
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-message {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #52aca7;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.logout-container:hover .welcome-message {
+  display: block;
+}
+
+.login-button {
+  margin-right: 50px; /* Ajusta el margen izquierdo del botón de login según sea necesario */
+  font-family: Arial, sans-serif;
+}
+
+a {
+  font-size: 16px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(239, 240, 241);
+  height: 125px;
+}
+.navbar-brand {
+  font-weight: 800;
+  color: #52aca7;
+  font-size: 24px;
+  transition: 0.3s color;
+}
+
+.login-button {
+  background-color: #52aca7;
+  border-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+  font-weight: 550;
+}
+
+.login-button:hover {
+  background-color: #8cceca;
+}
+
+.navbar-togger {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.navbar-togger:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 550;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: black;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #52aca7;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.nav-link.active {
+  background-color: rgba(
+    82,
+    172,
+    167,
+    0.5
+  ); /* Color de fondo del botón de login */
+  color: white; /* Color del texto */
+  padding: 12px 26px; /* Ajusta el espaciado interno */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(
+    82,
+    172,
+    167,
+    0.5
+  ); /* Color de fondo del botón de login */
+  color: white; /* Color del texto */
+  padding: 12px 26px; /* Ajusta el espaciado interno */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.web-name-small {
+  display: none; /* Oculta el texto en pantallas grandes */
+}
+
+@media (min-width: 992px) and (max-width: 1403px) {
+  .web-name {
+    margin-right: -120px; /* Ajusta el margen derecho para dejar espacio para el menú */
+  }
+}
+
+@media (max-width: 991px) {
+  .logo-container,
+  .web-name {
+    display: none; /* Oculta el logo y el nombre de la web en pantallas pequeñas */
+  }
+
+  .web-name-small {
+    display: block; /* Muestra el texto en pantallas pequeñas */
+    font-size: 24px; /* Ajusta el tamaño de fuente según sea necesario */
+    font-weight: 800; /* Ajusta el peso de la fuente según sea necesario */
+    color: #52aca7; /* Color del logo */
+    text-align: center; /* Ajusta la alineación del texto según sea necesario */
+    padding-top: 10px; /* Ajusta el espaciado superior según sea necesario */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1403px) {
+  p {
+    margin-right: -120px; /* Ajuste del margen derecho para dejar espacio para el menú */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (min-width: 992px) and (max-width: 1403px) {
+  p {
+    display: none; /* Oculta el párrafo en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    display: none; /* Oculta el párrafo en pantallas pequeñas */
+  }
+}
+
+.container {
+  width: 40%;
+  margin-top: 20px; /* Ajusta según sea necesario */
+  font-family: Arial, sans-serif;
+}
+
+.tabs {
+  padding-bottom: 10px; /* Espacio opcional entre pestañas y contenido */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.tab {
+  padding: 10px 0px;
+  cursor: pointer;
+  margin-bottom: -10px;
+}
+
+.tab.active {
+  background-color: #8cceca;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.fila {
+  font-weight: bold;
+}
+h4 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.contenido1 {
+  background-color: rgba(82, 172, 167, 0.5);
+  border-radius: 10px;
+}
+
+.accordion-button {
+  border: 1px solid rgb(212, 208, 208);
+  padding-bottom: 10px;
+
+  box-shadow: none; /* Quita el sombreado al enfocar */
+  background-color: transparent !important; /* Hace transparente el fondo */
+  color: inherit; /* Mantiene el color de texto original */
+}
+
+.accordion-button.active {
+  border-bottom: none; /* Quita el borde inferior */
+}
+
+.fondo {
+  background-color: #f3cec5;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.boton {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px 10px 20px;
+}
+
+.boton:hover {
+  background-color: rgb(240, 235, 235);
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  width: 90%;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 40%;
+  }
+}
+
+/* Estilos para las pestañas */
+.tabs {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  color: black;
+}
+
+.tab {
+  padding: 10px 0;
+  cursor: pointer;
+  margin-bottom: -10px;
+}
+
+.tab.active {
+  background-color: #52aca7;
+  color: white;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.fila {
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.contenido1 {
+  /* background-color: rgba(82, 172, 167, 0.5);*/
+  background-color: white;
+  border-radius: 10px;
+}
+
+.accordion-button {
+  border: 1px solid rgb(212, 208, 208);
+  padding-bottom: 10px;
+  box-shadow: none;
+  background-color: transparent !important;
+  color: inherit;
+}
+
+.accordion-button.active {
+  border-bottom: none;
+}
+
+.fondo {
+  background-color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.boton {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+}
+
+.boton:hover {
+  background-color: rgb(240, 235, 235);
+  cursor: pointer;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .fondo {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .welcome-message {
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .logo-container img {
+    height: 80px;
+  }
+
+  .contenido1 {
+    padding: 10px;
+  }
+
+  .form-group {
+    padding: 5px 0;
+  }
+
+  .row {
+    padding: 5px 0;
+  }
+}
+
+.containerDiv {
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+  background-color: rgba(143, 216, 212, 0.5);
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+h4,
+.font-weight-semi-bold {
+  font-weight: 600 !important;
+}
+
+h5 {
+  font-weight: 700;
+}

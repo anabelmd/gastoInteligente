@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand me-auto logo-container" [routerLink]="['/']"><img src="../../../assets/logo.png"
+                alt="Logo">
+            <p>gastoInteligente</p>
+        </a>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body ">
+
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" aria-current="page" [routerLink]="['/']" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" [routerLink]="['/calculadora']"
+                            routerLinkActive="active">CALCULADORA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" [routerLink]="['/planes-ahorro']" routerLinkActive="active">PLAN
+                            DE AHORRO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" [routerLink]="['/sobre-nosotros']" routerLinkActive="active">SOBRE
+                            NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2" [routerLink]="['/contacto']" routerLinkActive="active">CONTACTO</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!--<a class="login-button" [routerLink]="['/login']">LOGIN</a>-->
+        <div *ngIf="isAuthenticated" class="logout-container">
+            <button class="login-button" (click)="logout()" (mouseover)="showWelcomeMessage = true"
+                (mouseleave)="showWelcomeMessage = false">LOGOUT</button>
+            <span class="welcome-message" *ngIf="showWelcomeMessage">¡Bienvenido, {{ userEmail }}!</span>
+        </div>
+        <!-- Botón de inicio de sesión si no hay usuario autenticado -->
+        <a class="login-button" *ngIf="!isAuthenticated" [routerLink]="['/login']">LOGIN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+</nav>
